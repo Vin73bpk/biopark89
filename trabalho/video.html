@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assistir Vídeo do YouTube</title>
+    <style>
+        iframe {
+            width: 500px;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assistir Vídeo do YouTube</h1>
+    <label for="videoURL">Digite o endereço do vídeo do YouTube:</label>
+    <input type="text" id="videoURL" name="videoURL">
+    <br><br>
+    <button type="button" onclick="assistirVideo()">Assistir</button>
+    <br><br>
+    <div id="video"></div>
+
+    <script>
+        function assistirVideo() {
+            var videoURL = document.getElementById("videoURL").value;
+            var videoID = videoURL.split('=')[1];
+            var iframe = '<iframe src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+            document.getElementById("video").innerHTML = iframe;
+        }
+    </script>
+</body>
+</html>
